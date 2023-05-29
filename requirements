@@ -10,6 +10,10 @@
     git add .               "dodanie wszystkich nieśledzonych plików do staging area";
     git restore <file>      "usunięcie zmian w pliku przed update'm";
     git commit -m "message" "skomitowanie danej zmiany wraz z umieszczeniem opisu";
+    git log                 "historia naszego repozytorium";
+    git diff <file>         "weryfikacja zmian w pliku";
+    
+
     git config --global user.name "Your Name"       "konfiguracja nazwy użytkownika";
     git config --global user.email you@example.com  "konfiguracja adresu e-mail";
     git commit --amend --reset-author               "przywrócenie ustawień domyślnych nazwy użytkownika";
