@@ -9,6 +9,7 @@
     git rm --cached <file>     "wycofanie pliku ze staging area - przestajemy go śledzić";
     git add .                  "dodanie wszystkich nieśledzonych plików do staging area";
     git restore <file>         "usunięcie zmian w pliku przed update'm";
+    git restore --staged <file>"usunięcie zmian w pliku po zapisie";
     git commit -m "message"    "skomitowanie danej zmiany wraz z umieszczeniem opisu po wcześniejszym umieszczeniu w sekcji do złożenia";
     git log                    "historia naszego repozytorium";
     git diff <file>            "weryfikacja zmian w pliku";
