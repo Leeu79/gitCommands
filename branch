@@ -1,0 +1,6 @@
+{
+    git branch <id>            "stworzenie gałęzi od nazwie id";
+    git branch                 "wyświetlenie listy dostępnych gałęzi";
+    git checkout <branch>      "wywołąnie gałęzi podanej w komendzie";
+    
+}
