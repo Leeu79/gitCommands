@@ -14,10 +14,20 @@
     git log                    "historia naszego repozytorium";
     git diff <file>            "weryfikacja zmian w pliku";
     git commit -a -m "message" "zapisze jednocześnie do staging area i skomituje";
+    git revert <id commit>     "wycofanie zmian z danego commita"; // w celu zamknięcia edytora musimy wpisać:" :wq! ";
+    git reset <id commit>      "resetowanie naszego repozytorium do commit apodanego w komendzie";
+    .touch gitignore + <file>  "ignorowanie pliku";
 
     git add . + git commit -m ".." = git commit -a -m ".." zapis równoznaczny!!
 
     git config --global user.name "Your Name"       "konfiguracja nazwy użytkownika";
     git config --global user.email you@example.com  "konfiguracja adresu e-mail";
     git commit --amend --reset-author               "przywrócenie ustawień domyślnych nazwy użytkownika";
+
+    branch
+
+    git branch <id>            "stworzenie gałęzi od nazwie id";
+    git branch                 "wyświetlenie listy dostępnych gałęzi";
+    git checkout <branch>      "wywołanie gałęzi podanej w komendzie";
+    
 }
