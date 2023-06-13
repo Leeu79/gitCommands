@@ -15,7 +15,7 @@
     git diff <file>            "weryfikacja zmian w pliku";
     git commit -a -m "message" "zapisze jednocześnie do staging area i skomituje";
     git revert <id commit>     "wycofanie zmian z danego commita"; // w celu zamknięcia edytora musimy wpisać:" :wq! ";
-    git reset <id commit>      "resetowanie naszego repozytorium do commit apodanego w komendzie";
+    git reset <id commit>      "resetowanie naszego repozytorium do commita podanego w komendzie";
     .touch gitignore + <file>  "ignorowanie pliku";
 
     git add . + git commit -m ".." = git commit -a -m ".." zapis równoznaczny!!
