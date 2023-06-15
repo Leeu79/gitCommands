@@ -19,7 +19,7 @@
     git stash                  "zachowanie zmian do schowka";
     git stash apply            "przywrócenie zmian ze schowka wraz z zachowaniem ich w schowku";
     git stash pop              "przywrócenie zmian ze schowka wraz z usunięciem ich ze schowka";
-    
+
     .touch gitignore + <file>  "ignorowanie pliku";
 
     git add . + git commit -m ".." = git commit -a -m ".." zapis równoznaczny!!
@@ -35,4 +35,18 @@
     git checkout <branch>      "wywołanie gałęzi podanej w komendzie";
     git merge <branch>         "łączenie zmian między gałęziami";
     git branch -d <branch>     "usunięcie gałęzi";
+
+    repozytorium zdalne
+
+    w celu dodania zmian do repozytorium zdalnego
+
+    git remote add origin https://github.com/Leeu79/gitCommands.git
+    git branch -M <branch>
+    git push -u origin <branch>
+
+    w celu autentykacji
+
+    ssh-keygen -t ed25519 -C "d.kopczynski1979@gmail.com"
+
+    podajemy ścieżkę do klucza publicznego + komenada cat aby zobaczyć wartość klucza i dodajemy go na githubie.
 }
