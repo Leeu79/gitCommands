@@ -40,7 +40,7 @@
 
     w celu dodania zmian do repozytorium zdalnego
 
-    git remote add origin https://github.com/Leeu79/gitCommands.git
+    git remote add origin https://github.com/.../....git
     git branch -M <branch>
     git push -u origin <branch>
 
@@ -48,5 +48,5 @@
 
     ssh-keygen -t ed25519 -C "your address e-mail"
 
-    podajemy ścieżkę do klucza publicznego + komenada cat aby zobaczyć wartość klucza i dodajemy go na githubie.
+    podajemy ścieżkę do klucza publicznego + komenda cat aby zobaczyć wartość klucza i dodajemy go na githubie.
 }
