@@ -39,6 +39,7 @@
     repozytorium zdalne
 
     git push                   "dodanie zmian z repozytorium lokalnego";
+    pull requests              "prośba o domergowanie requesta";
 
     w celu dodania zmian do repozytorium zdalnego
 
@@ -51,8 +52,5 @@
     ssh-keygen -t ed25519 -C "your address e-mail"
 
     podajemy ścieżkę do klucza publicznego + komenda cat aby zobaczyć wartość klucza i dodajemy go na githubie.
-
-    Zagadka na dziś:
-    "TELL ME STH I DON'T KNOW:)" - z jakiego to filmu?
 
 }
