@@ -50,7 +50,7 @@
     w celu dodania zmian do repozytorium zdalnego
 
     git remote add origin https://github.com/.../....git
-    git branch -M <branch>
+    git branch -M <branch>      "zmiana nazwy brancha na <branch>"
     git push -u origin <branch> "dodanie brancha do repozytorium zdalnego";
 
     w celu autentykacji
