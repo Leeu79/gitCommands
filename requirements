@@ -41,6 +41,7 @@
     git push                   "dodanie zmian z repozytorium lokalnego";
     pull requests              "prośba o domergowanie requesta";
 
+
     w celu dodania zmian do repozytorium zdalnego
 
     git remote add origin https://github.com/.../....git
@@ -52,5 +53,4 @@
     ssh-keygen -t ed25519 -C "your address e-mail"
 
     podajemy ścieżkę do klucza publicznego + komenda cat aby zobaczyć wartość klucza i dodajemy go na githubie.
-
 }
