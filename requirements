@@ -38,15 +38,20 @@
 
     repozytorium zdalne
 
+    git push                   "dodanie zmian z repozytorium lokalnego";
+
     w celu dodania zmian do repozytorium zdalnego
 
     git remote add origin https://github.com/.../....git
     git branch -M <branch>
-    git push -u origin <branch>
+    git push -u origin <branch> "dodanie brancha do repozytorium zdalnego";
 
     w celu autentykacji
 
     ssh-keygen -t ed25519 -C "your address e-mail"
 
     podajemy ścieżkę do klucza publicznego + komenda cat aby zobaczyć wartość klucza i dodajemy go na githubie.
+
+     Zagadka na dziś:
+    "TELL ME STH I DON'T KNOW:)" - z jakiego to filmu?
 }
