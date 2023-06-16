@@ -1,3 +1,4 @@
 {
-    cat ./<file> "wyświetlenie zawartości pliku" // ./ taki zapis inormuje Nas, że chcemy weryfikować plik w bieżącej ścieżce
+    cat ./<file> "wyświetlenie zawartości pliku" // ./ taki zapis inormuje Nas, że chcemy weryfikować plik w bieżącej ścieżce;
+    mkdir <file> "dodanie nowego folderu";
 }
