@@ -44,6 +44,7 @@
     git merge                  "zsynchronizowanie danych między repozytorium zdalnym a lokalnym";
 
     git fetch origin <branch> + git merge = git pull // zapis równoznaczny !!
+    
     git pull --all             "pobieranie danych ze wszystkich gałęzi"; 
     git push --all             "dodanie zmian do repozytorium zdalnego ze wszystkich gałęzi";                 
 
