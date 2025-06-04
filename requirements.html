@@ -62,7 +62,11 @@
     git remote -v              "pokazuje listę zdalnych repozytoriów powiązanych z Twoim lokalnym repozytorium."
     git push                   "dodanie zmian do repozytorium zdalnego";
     pull requests              "prośba o domergowanie requesta";
+    
     git fetch origin <branch>  "weryfikacja danych w repozytorium lokalnym po zmianach w repozytorium zdalnym - dotyczy konkretnej gałęzi";
+    +                           //po wprowadzeniu odpowiedniego nazwy zdalengoo repozytorium oraz gałęzi musimy wprowadzić kolejną komende     
+    git diff <branch> FETCH-HEAD     
+    
     git merge                  "zsynchronizowanie danych między repozytorium zdalnym a lokalnym";
 
     git fetch origin <branch> + git merge = git pull // zapis równoznaczny !!
