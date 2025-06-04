@@ -9,6 +9,9 @@
     git add <file>             "dodanie pliku do staging area (index) - zaczynamy go śledzić";
     git rm --cached <file>     "wycofanie pliku ze staging area - przestajemy go śledzić";
     git add .                  "dodanie wszystkich nieśledzonych plików do staging area";
+    git add -A
+    git add --all
+    git add file1 file2
     git restore <file>         "usunięcie zmian w pliku przed update'm";
     git restore --staged <file>"usunięcie zmian w pliku po zapisie";
     git commit -m "message"    "skomitowanie danej zmiany wraz z umieszczeniem opisu po wcześniejszym umieszczeniu w sekcji do złożenia";
@@ -20,6 +23,8 @@
     git stash                  "zachowanie zmian do schowka";
     git stash apply            "przywrócenie zmian ze schowka wraz z zachowaniem ich w schowku";
     git stash pop              "przywrócenie zmian ze schowka wraz z usunięciem ich ze schowka";
+    git init -h //jakich parametrów możemy użyć przy różnych poleceniach w tym przypadku init
+    git init --help //dokumentacja
 
     .touch gitignore + <file>  "ignorowanie pliku";
 
@@ -28,6 +33,13 @@
     git config --global user.name "Your Name"       "konfiguracja nazwy użytkownika";
     git config --global user.email you@example.com  "konfiguracja adresu e-mail";
     git commit --amend --reset-author               "przywrócenie ustawień domyślnych nazwy użytkownika";
+
+    git config --unset --globa user.email //usunięcie
+    git config user.name "JanekN" //do pojedynczego repozytorium w pliku .git/config
+    git config user.name //sprawdzamy jaka nazwa będzie użyta w danym repozytorium
+    git config --global core.editor //jaki edytor jest ustawiony globalnie dla Git
+    cat ~/.gitconfig // zawartość pliku
+    git config --global --list //lista ustawień globalnych
 
     branch
 
