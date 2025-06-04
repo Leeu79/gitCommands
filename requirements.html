@@ -7,15 +7,23 @@
     git init                   "stworzenie nowego repozytorium .git";
     git status                 "weryfikacja aktualnego statusu";
     git add <file>             "dodanie pliku do staging area (index) - zaczynamy go śledzić";
-    git rm --cached <file>     "wycofanie pliku ze staging area - przestajemy go śledzić";
     git add .                  "dodanie wszystkich nieśledzonych plików do staging area";
     git add -A
     git add --all
     git add file1 file2
-    git restore <file>         "usunięcie zmian w pliku przed update'm";
-    git restore --staged <file>"usunięcie zmian w pliku po zapisie";
+    git rm --cached <file>     "wycofanie pliku ze staging area - przestajemy go śledzić";
+    git restore <file>         "usunięcie zmian w pliku przed update'm (wszystkie które zrobilismy lokalnie)";
+    git restore --staged <file> = git reset <file> "usunięcie zmian w pliku po zapisie (usuwa z indexu, ale pozostawia w work directory)";	 
+    git reset <commit>         "--soft — przesuwa HEAD, zachowując zmiany w stagingu i na dysku.
+                                --mixed (domyślny) — przesuwa HEAD, usuwa staging, zostawia zmiany na dysku.
+                                --hard — przesuwa HEAD i usuwa wszystkie zmiany w stagingu i katalogu roboczym (ostrożnie!)."
+        example: A - B - C - D (HEAD) -> git reset --soft B // HEAD przesuwa się na commit B. Zmiany z commitów C i D zostają w stagingu i w katalogu roboczym (czyli gotowe do ponownego commitowania).
     git commit -m "message"    "skomitowanie danej zmiany wraz z umieszczeniem opisu po wcześniejszym umieszczeniu w sekcji do złożenia";
     git log                    "historia naszego repozytorium";
+    git log --oneline          //w jednej linii podstawowe informacje
+    git log --oneline 10       //ile linii (od najnowszych)
+    got log --since "2019"     //od 2019
+    got log --since="5.4.2019" //od konkretnej daty; innym zapisem
     git diff <file>            "weryfikacja zmian w pliku";
     git commit -a -m "message" "zapisze jednocześnie do staging area i skomituje";
     git revert <id commit>     "wycofanie zmian z danego commita"; // w celu zamknięcia edytora musimy wpisać:" :wq! ";
