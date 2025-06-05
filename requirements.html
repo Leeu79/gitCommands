@@ -1,5 +1,6 @@
 {
     pwd                        "weryfikacja ścieżki na której obecnie się znajdujemy";
+    cat <file>                 "zawartość pliku";
     ls                         "wyświetlanie wszystkich elementów znajdujących się na danej ścieżce";
     echo "Bartek" >> name.html "stworzenie pliku z rozszerzeniem html o zawartości Bartek" 
     cd <catalog>               "przejście do tego katalogu";
@@ -10,29 +11,44 @@
     git add .                  "dodanie wszystkich nieśledzonych plików do staging area";
     git add -A
     git add --all
-    git add file1 file2
+    git add <file1> <file2>
     git rm --cached <file>     "wycofanie pliku ze staging area - przestajemy go śledzić";
     git restore <file>         "usunięcie zmian w pliku przed update'm (wszystkie które zrobilismy lokalnie)";
     git restore --staged <file> = git reset <file> "usunięcie zmian w pliku po zapisie (usuwa z indexu, ale pozostawia w work directory)";	 
-    git reset <commit>         "--soft — przesuwa HEAD, zachowując zmiany w stagingu i na dysku.
-                                --mixed (domyślny) — przesuwa HEAD, usuwa staging, zostawia zmiany na dysku.
-                                --hard — przesuwa HEAD i usuwa wszystkie zmiany w stagingu i katalogu roboczym (ostrożnie!)."
-        example: A - B - C - D (HEAD) -> git reset --soft B // HEAD przesuwa się na commit B. Zmiany z commitów C i D zostają w stagingu i w katalogu roboczym (czyli gotowe do ponownego commitowania).
-    git commit -m "message"    "skomitowanie danej zmiany wraz z umieszczeniem opisu po wcześniejszym umieszczeniu w sekcji do złożenia";
+    git reset <commit>         "--soft — przesuwa HEAD, zachowując zmiany w stagingu i na dysku";
+                               "--mixed (domyślny) — przesuwa HEAD, usuwa staging, zostawia zmiany na dysku";
+                               "--hard — przesuwa HEAD i usuwa wszystkie zmiany w stagingu i katalogu roboczym (ostrożnie!)";
+        example: A - B - C - D (HEAD) -> git reset --soft B -> HEAD przesuwa się na commit B. Zmiany z commitów C i D zostają w stagingu i w katalogu roboczym (czyli gotowe do ponownego commitowania)";
     git log                    "historia naszego repozytorium";
-    git log --oneline          //w jednej linii podstawowe informacje
-    git log --oneline 10       //ile linii (od najnowszych)
-    got log --since "2019"     //od 2019
-    got log --since="5.4.2019" //od konkretnej daty; innym zapisem
-    git diff <file>            "weryfikacja zmian w pliku";
+    git log --grep "plik.txt." "wyświetli historię commitów, których komunikat zawiera tekst „plik.txt” – niezależnie od tego, czy plik plik.txt był rzeczywiście zmieniony";
+    git log --stat             "wyświetli które pliki zmienił commit i w jaki sposób + wyświetli listę commitów - tak samo jak git log";
+    git show                   "wyświetli co się zmieniło (szczegółowo) w danym commicie (najnowszym)";
+    git show "nr commit"       "wyświetli co się zmieniło (szczegółowo) w danym commicie wskazanym przez nas";
+    git log --oneline          "w jednej linii podstawowe informacje";
+    git log --oneline 10       "ile linii (od najnowszych)";
+    got log --since "2019"     "od 2019";
+    got log --since="5.4.2019" "od konkretnej daty; innym zapisem";
+    git diff <file>            "weryfikacja zmian w pliku pomiędzy plikiem roboczym a tm co w indeksie";
+    git diff --cached/staged   "pliki w stage (pliki sledzone w poczekalni) z plikami z repozytorium (domyślnie z tymi w HEAD, czyli ostatniego commitu w gałęzi)";
+    git commit -m "message"    "zapisanie zmian w repozytorium";
+    git commit <file>          "zapisanie pliku w repozytorium";
     git commit -a -m "message" "zapisze jednocześnie do staging area i skomituje";
-    git revert <id commit>     "wycofanie zmian z danego commita"; // w celu zamknięcia edytora musimy wpisać:" :wq! ";
+    rm file                    "usuwa plik z katalogu roboczego";
+    git rm --cached file       "usuwa z indeksu";
+    git rm <file>              "usuwa z katalogu roboczego i z indeksu";
+    git mv <file1> <file2>     "zamiana nazwy pliku. Przy czym w praktyce widzimy,że mamy zadanie renamed w następnym commicie, które oznacza polecenie usunięcia jednego pliku i dodania nowego";
+    git checkout --<file>      "zmiany z wersji roboczej są usuwane i przywracana jest (w katalogu roboczym) wersja, które znajduje się w indeksie. 
+                                W praktyce jeśli nie mamy żadnej zmiany w staging area to wersja jaka była po ostatnim commicie";
+    git checkout <id-commita>  "ustawienie HEAD na tym commicie";
+    git checkout HEAD --<file> "do katalogu roboczego przywracana jest wersja pliku z ostatniego commita";
+    git reset HEAD <file>      "usuwa z indeksu zmiany (przywracamy do indeksu wersję jaka była po ostatnim commicie)";
     git reset <id commit>      "resetowanie naszego repozytorium do commita podanego w komendzie";
+    git revert <id commit>     "wycofanie zmian z danego commita"; // w celu zamknięcia edytora musimy wpisać:" :wq! ";
     git stash                  "zachowanie zmian do schowka";
     git stash apply            "przywrócenie zmian ze schowka wraz z zachowaniem ich w schowku";
     git stash pop              "przywrócenie zmian ze schowka wraz z usunięciem ich ze schowka";
-    git init -h //jakich parametrów możemy użyć przy różnych poleceniach w tym przypadku init
-    git init --help //dokumentacja
+    git init -h                "jakich parametrów możemy użyć przy różnych poleceniach w tym przypadku init";
+    git init --help            "dokumentacja";
 
     .touch gitignore + <file>  "ignorowanie pliku";
 
@@ -42,19 +58,18 @@
     git config --global user.email you@example.com  "konfiguracja adresu e-mail";
     git commit --amend --reset-author               "przywrócenie ustawień domyślnych nazwy użytkownika";
 
-    git config --unset --globa user.email //usunięcie
-    git config user.name "JanekN" //do pojedynczego repozytorium w pliku .git/config
-    git config user.name //sprawdzamy jaka nazwa będzie użyta w danym repozytorium
-    git config --global core.editor //jaki edytor jest ustawiony globalnie dla Git
-    cat ~/.gitconfig // zawartość pliku
-    git config --global --list //lista ustawień globalnych
+    git config --unset --globa user.email           "usunięcie ustawień";
+    git config user.name "JanekN"                   "do pojedynczego repozytorium w pliku .git/config";
+    git config user.name                            "sprawdzamy jaka nazwa będzie użyta w danym repozytorium";
+    git config --global core.editor                 "jaki edytor jest ustawiony globalnie dla Git";
+    git config --global --list                      "lista ustawień globalnych";
 
     branch
 
     git branch <id>            "stworzenie gałęzi od nazwie id";
     git branch                 "wyświetlenie listy dostępnych gałęzi";
-    git checkout <branch>      "wywołanie gałęzi podanej w komendzie";
-    git merge <branch>         "łączenie zmian między gałęziami";
+    git checkout <branch>      "przełączamy się na gałąź podaną w komendzie";
+    git merge <branch>         "łączenie gałęzi na której jesteśmy ze wskazaną gałęzią";
     git branch -d <branch>     "usunięcie gałęzi";
     git branch -vv             "sprawdzamy, czy gałąź lokalna śledzi zdalną";
 
@@ -65,7 +80,7 @@
     pull requests              "prośba o domergowanie requesta";
     
     git fetch origin <branch>  "weryfikacja danych w repozytorium lokalnym po zmianach w repozytorium zdalnym - dotyczy konkretnej gałęzi";
-    +                           //po wprowadzeniu odpowiedniego nazwy zdalengoo repozytorium oraz gałęzi musimy wprowadzić kolejną komende     
+    +                           po wprowadzeniu odpowiedniej nazwy zdalnego repozytorium oraz gałęzi musimy wprowadzić kolejną komende     
     git diff <branch> FETCH-HEAD     
     
     git merge                  "zsynchronizowanie danych między repozytorium zdalnym a lokalnym";
