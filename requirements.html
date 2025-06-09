@@ -2,8 +2,8 @@
     pwd                        "weryfikacja ścieżki na której obecnie się znajdujemy";
     cat <file>                 "zawartość pliku";
     ls                         "wyświetlanie wszystkich elementów znajdujących się na danej ścieżce";
-    echo "Bartek" >> name.html "stworzenie pliku/dopisanie tresci Bartek (o ile plik juz istnieje) z rozszerzeniem html o zawartości Bartek"
-    echo "Bartek" > name.html  "nadpisze to co znajduje sie w pliku name.html"
+    echo "Bartek" >> name.html "stworzenie pliku/dopisanie tresci Bartek (o ile plik juz istnieje) z rozszerzeniem html o zawartości Bartek";
+    echo "Bartek" > name.html  "nadpisze to co znajduje sie w pliku name.html";
     cd <catalog>               "przejście do tego katalogu";
     cd ..                      "przejście do katalogu nadrzędnego";
     git init                   "stworzenie nowego repozytorium .git";
@@ -14,6 +14,10 @@
     git add --all
     git add <file1> <file2>
     git rm --cached <file>     "wycofanie pliku ze staging area - przestajemy go śledzić";
+        
+    Rename-Item -Path "stara_nazwa.md" -NewName "nowa_nazwa.md"   "zmiana nazwy nieśledzonego pliku";
+    git mv stara_nazwa.md nowa_nazwa.md                           "zmiana nazwy śledzonego pliku";
+        
     git restore <file>         "usunięcie zmian w pliku przed update'm (wszystkie które zrobilismy lokalnie)";
     git restore --staged <file> = git reset <file> "usunięcie zmian w pliku po zapisie (usuwa z indexu, ale pozostawia w work directory)";	 
     git reset <commit>         "--soft — przesuwa HEAD, zachowując zmiany w stagingu i na dysku";
